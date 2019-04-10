@@ -1,0 +1,31 @@
+package Main;
+
+public class ClimbStairs {
+	ClimbStairs(){
+		
+	}
+	public int cs(int n) {
+		return 0;
+	}
+	 public int test(int n) {
+	        int[] a = new int[n + 1];
+			a[0] = 0;
+			if (n > 0) {
+				a[1] = 1;
+			}
+			if (n > 1) {
+				a[2] = 2;
+			}
+			if (n >= 3) {
+				for (int i = 3; i < a.length; i++) {
+					a[i] = a[i - 1] + a[i - 2];
+				}
+			}
+			return a[n];
+	    }
+
+	public static void main(String args[]) {
+		ClimbStairs tmp = new ClimbStairs();
+		System.out.println(tmp.test(10));
+	}
+}

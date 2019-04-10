@@ -1,0 +1,56 @@
+/**
+ * 
+ */
+package Main;
+
+/**
+ * @author Dongxu
+ * 求一个数的平方根
+ */
+public class MySqrt {
+	MySqrt(){
+		
+	}
+	public int MS(int x) {
+		double x_current = x;
+		double median = x_current / 2;
+		System.out.println(median);
+		double squre = 0;
+		double high = x_current;
+		double low = 0;
+		while(low < high) {
+			squre = median * median;
+			if(squre == x_current) {
+				return (int)median;
+			}else if(squre > x_current) {
+				high = median - 1;
+				median = (high + low) / 2;
+			}else {
+				low = median + 1;
+				median = (high + low) / 2;
+				System.out.println(median);
+			}
+		}
+		return (int)low;
+	}
+	public int MS2(int x) {
+		int low = 0;
+		int high = x;
+		while (low <= high) {
+			long mid = (low + high) / 2;//防止溢出
+			System.out.println(mid);
+			if (mid * mid == x)
+				return (int) mid;
+			else if (mid * mid < x)
+				low = (int) (mid + 1);
+			else
+				high = (int) (mid - 1);
+		}
+		return high;
+	}
+	public static void main(String args[]) {
+		int x = 1;
+		MySqrt tmp = new MySqrt();
+		System.out.println(tmp.MS(x));
+	}
+}

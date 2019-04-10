@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package Main;
+
+/**
+ * @author Dongxu
+ * 求一个数的平方根
+ */
+public class MySqrt {
+	MySqrt(){
+		
+	}
+	public int MS(int x) {
+		double x_current = x;
+		double median = x_current / 2;
+		System.out.println(median);
+		double squre = 0;
+		double high = x_current;
+		double low = 0;
+		while(true) {
+			squre = median * median;
+			if(Math.abs(squre - x_current) < 1e-7) {
+				return (int)median;
+			}else if(squre > x_current) {
+				high = median;
+				median = (high + low) / 2;
+			}else {
+				low = median;
+				median = (high + low) / 2;
+				System.out.println(median);
+			}
+		}
+	}
+	public static void main(String args[]) {
+		int x = 4;
+		MySqrt tmp = new MySqrt();
+		System.out.println(tmp.MS(x));
+	}
+}

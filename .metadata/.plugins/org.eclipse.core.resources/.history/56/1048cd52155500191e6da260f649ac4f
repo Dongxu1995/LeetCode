@@ -1,0 +1,42 @@
+package Main;
+/**
+ * @author Dongxu
+  * 爬楼梯：动态规划，f(n) = f(n - 1) + f(n - 2)，1 2 3 5 8 13 ...
+  * 斐波那契数列(超时）递归时间过长
+ */
+public class ClimbStairs {
+	ClimbStairs(){
+		
+	}
+	public int cs(int n) {
+		if(n == 1)
+			return 1;
+		if(n == 2)
+			return 2;
+		return cs(n-1) + cs(n-2);
+		
+	}
+	
+	 public int test(int n) {
+	        int[] a = new int[n + 1];
+			a[0] = 0;
+			if (n > 0) {
+				a[1] = 1;
+			}
+			if (n > 1) {
+				a[2] = 2;
+			}
+			if (n >= 3) {
+				for (int i = 3; i < a.length; i++) {
+					a[i] = a[i - 1] + a[i - 2];
+				}
+			}
+			return a[n];
+	    }
+
+	public static void main(String args[]) {
+		ClimbStairs tmp = new ClimbStairs();
+		System.out.println(tmp.cs(10));
+		System.out.println(tmp.test(10));
+	}
+}

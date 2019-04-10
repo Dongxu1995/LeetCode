@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package Main;
+
+/**
+ * @author Dongxu
+ *
+ */
+public class AddBinary {
+	AddBinary(){
+		
+	}
+	public String ab(String a, String b) {
+		 
+		return " ";
+	}
+	public static void main(String args[]) {
+		
+	}
+}
